@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "tpcsdemo-caa9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "tpcsdemo-caa9"
+  template:
+    metadata:
+      labels:
+        app: "tpcsdemo-caa9"
+    spec:
+      containers:
+        - name: "tpcsdemo-caa9"
+          image: "azcontainer123.azurecr.io/tpcsdemo"
+          ports:
+          - containerPort: 80
