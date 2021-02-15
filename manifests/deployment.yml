@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "tpcsdemo-bfc1"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "tpcsdemo-bfc1"
+  template:
+    metadata:
+      labels:
+        app: "tpcsdemo-bfc1"
+    spec:
+      containers:
+        - name: "tpcsdemo-bfc1"
+          image: "azcontainer123.azurecr.io/tpcsdemo"
+          ports:
+          - containerPort: 80
