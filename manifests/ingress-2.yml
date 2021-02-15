@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "tpcsdemo-caa9"
+    labels:
+        app: "tpcsdemo-caa9"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: default-tpcsdemo-caa9.4dfebe5331fd4022bd3f.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "tpcsdemo-caa9"
+                servicePort: 80
